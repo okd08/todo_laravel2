@@ -19,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // 強制的にhttps(保護された通信)にする→CSS反映、「保護されていない通信」が出なくなる
         if (\App::environment(['production']) || \App::environment(['develop']))
         {
             \URL::forceScheme('https');
